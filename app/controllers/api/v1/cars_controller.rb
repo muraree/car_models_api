@@ -13,7 +13,7 @@ class Api::V1::CarsController < Api::BaseController
 
   # Get Models for Make Id and a combination of Year
   def get_models_for_make_id_year
-    render json: vehicle_service.get_models_for_make_id_year(params[:make_id], params[:year])
+    render json: vehicle_service.get_models_for_make_id_year(params[:make_id], params[:make_year])
   end
 
   private
