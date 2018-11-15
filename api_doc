@@ -1,0 +1,95 @@
+# Get All Makes
+Api call:
+GET "api/v1/cars/get_all_makes"
+
+Params: {}
+
+Response:
+{
+    "Count": 8840,
+    "Message": "Response returned successfully",
+    "SearchCriteria": null,
+    "Results": [
+        {
+            "Make_ID": 440,
+            "Make_Name": "Aston Martin"
+        },
+        {
+            "Make_ID": 441,
+            "Make_Name": "Tesla"
+        },
+        {
+            "Make_ID": 442,
+            "Make_Name": "Jaguar"
+        },
+        {
+        .....
+        .....
+      ]
+  }
+
+# Get Models for MakeId
+Api call:
+GET "api/v1/cars/get_models_for_make_id/440"
+
+Params: { :make_id }
+
+Response:
+{
+    "Count": 13,
+    "Message": "Response returned successfully",
+    "SearchCriteria": "Make:440",
+    "Results": [
+        {
+            "Make_ID": 440,
+            "Make_Name": "Aston Martin",
+            "Model_ID": 1684,
+            "Model_Name": "V8 Vantage"
+        },
+        {
+            "Make_ID": 440,
+            "Make_Name": "Aston Martin",
+            "Model_ID": 1686,
+            "Model_Name": "DBS"
+        },
+        ....
+        ....
+      ]
+  }
+
+# Get Models for Make Id and a combination of Year
+Api call:
+GET "api/v1/cars/get_models_for_make_id/474/make_year/2015"
+
+Params: {:make_id, :make_year}
+
+Response:
+
+{
+    "Count": 169,
+    "Message": "Results returned successfully",
+    "SearchCriteria": "Make ID:474 | ModelYear:2015",
+    "Results": [
+        {
+            "Make_ID": 474,
+            "Make_Name": "Honda",
+            "Model_ID": 1861,
+            "Model_Name": "Accord"
+        },
+        {
+            "Make_ID": 474,
+            "Make_Name": "Honda",
+            "Model_ID": 1863,
+            "Model_Name": "Civic"
+        },
+        {
+            "Make_ID": 474,
+            "Make_Name": "Honda",
+            "Model_ID": 1864,
+            "Model_Name": "Pilot"
+        },
+        ....
+        ....
+      ]
+  }
+
